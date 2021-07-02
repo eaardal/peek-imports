@@ -3,7 +3,7 @@
   "displayName": "Peeky",
   "description": "Peek and modify import statements without leaving the line and cursor position you're working on.",
   "publisher": "eaardal",
-  "icon": "peeky.png",
+  "icon": "logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/eaardal/peeky"
