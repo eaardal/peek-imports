@@ -2,6 +2,8 @@
 
 A Visual Studio Code extension that lets you peek and modify import statements without leaving the line you're working on.
 
+![](./docs/images/howItWorks.gif)
+
 ## How to use
 
 1. Anywhere in a code file, use the command `Peeky: Peek Imports`.
