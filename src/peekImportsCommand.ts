@@ -13,16 +13,20 @@ async function getImportStatementsRange(editor: vscode.TextEditor) {
   const lines = text.split("\n");
 
   let importLines = [];
+  let importLocations = [];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
     if (line.startsWith("import")) {
       importLines.push(i);
+      importLocations.push(
+        new vscode.Location(editor.document.uri, new vscode.Position(i, 0))
+      );
     }
   }
 
-  const startLineNumber = importLines[0] + 1;
-  const endLineNumber = importLines[importLines.length - 1] + 1;
+  const startLineNumber = importLines[0];
+  const endLineNumber = importLines[importLines.length - 1];
 
   let startLocation = new vscode.Location(
     editor.document.uri,
@@ -37,6 +41,7 @@ async function getImportStatementsRange(editor: vscode.TextEditor) {
   return {
     start: startLocation,
     end: endLocation,
+    range: importLocations,
   };
 }
 
@@ -100,13 +105,19 @@ export async function peekImports() {
   currentVisibleRanges = editor.visibleRanges;
 
   // Figure out at which lines the import statements starts and ends
-  const { start, end } = await getImportStatementsRange(editor);
+  const { end, range } = await getImportStatementsRange(editor);
+
+  // We want the cursor to be on the first line after the last import statement when the Peek Window opens.
+  const lineAfterLastImport = new vscode.Location(
+    editor.document.uri,
+    new vscode.Position(end.range.end.line + 1, 0)
+  );
 
   // Open a peek window at the import statements line range
   await executeVSCodePeekLocationsCommand(
     editor.document.uri,
     editor.selection.active,
-    [start, end]
+    [...range, lineAfterLastImport] // Add the first line after the last import statement as the last line in the Peek Window's range
   );
 
   // After we have opened a peek window, we need to hook up to some event listeners
