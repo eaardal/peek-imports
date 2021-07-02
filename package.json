@@ -16,6 +16,7 @@
     "Other"
   ],
   "activationEvents": [
+    "onCommand:peeky.peekImports",
     "onLanguage:javascript",
     "onLanguage:typescript"
   ],
