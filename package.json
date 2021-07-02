@@ -3,6 +3,7 @@
   "displayName": "Peeky",
   "description": "Peek and modify import statements without leaving the line and cursor position you're working on.",
   "publisher": "eaardal",
+  "icon": "./peeky.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/eaardal/peeky"
@@ -25,6 +26,14 @@
         "command": "peeky.peekImports",
         "title": "Peeky: Peek Imports"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "peeky.peekImports",
+        "key": "ctrl+i",
+        "mac": "ctrl+i",
+        "when": "editorTextFocus"
+      }
     ]
   },
   "scripts": {
@@ -35,7 +44,7 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
     "package": "vsce package",
-    "install": "code --install-extension peeky-0.0.1.vsix"
+    "local-install": "code --install-extension peeky-0.0.1.vsix"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",

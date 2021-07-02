@@ -4,14 +4,27 @@ A Visual Studio Code extension that lets you peek and modify import statements w
 
 ## How to use
 
-Anywhere in a code file, use the command `Peeky: Peek Imports`.
+1. Anywhere in a code file, use the command `Peeky: Peek Imports`.
+2. A Peek Window will open at your current position, but it will contain the import statements at the top of the file.
+3. Insert a new import statement or modify an existing one, then press Escape to close the Peek Window and continue writing code where you left of.
 
-A Peek Window will open at your current position, but it will contain the import statements at the top of the file.
-Insert a new import statement or modify an existing one, then press <key>Escape</key> to discard the Peek Window and continue writing code where you left of.
+### Keybindings
+
+- `ctrl+i`: Executes the `Peeky: Peek Imports` command.
+
+## Caveats
+
+- Only works in javascript and typescript files.
+- Only works for `import` statements, not `require` (it looks for lines that starts with the word "import" with no leading whitespace).
 
 ## Options
 
-By default when the Peek Window opens, the right-hand side menu is in focus. This is annoying because you then have to move your hand over to your mouse to set the cursor where you want to insert a new import statement in the left-hand editor panel.
+### Fix the Peek Window's default focus
+
+By default when the Peek Window opens, the right-hand side menu is in focus. This is annoying because you then have to move your hand over to your mouse and use the mouse to set the cursor where you want to insert a new import statement in the left-hand editor panel.
+
 To change it so that the left-hand editor panel is in focus by default, go to `Preferences: Open User Settings` and under `Text Editor` change the setting `Peek Widget Default Focus` to be `editor`.
 
 ![](./docs/images/howToChangePeekWindowFocus.png)
+
+If you use any VSCode feature that also rely on the Peek Window, such as Show References or Peek Definitions, this might interfere with your expected behaviour so decide for yourself how you want focus to be handled.
