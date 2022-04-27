@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Renamed extension from Peeky to Peek Imports. Only the display name is changed.
+- Renamed extension from Peeky to Peek Imports. The package name `eaardal.peeky` is maintained to avoid publishing a new extension.
+- Renamed command display name `Peeky: Peek Imports` to just `Peek Imports`.
+- Renamed command id `peeky.peekImports` to `peekimports.peekImports`. Breaks custom keybindings that targetted the old command id.
 
 ## [0.0.4] - 2021-07-02
 
