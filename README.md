@@ -1,4 +1,4 @@
-# Peeky
+# Peek Imports
 
 A Visual Studio Code extension that lets you peek and modify import statements without leaving the line you're working on.
 
@@ -12,7 +12,7 @@ A Visual Studio Code extension that lets you peek and modify import statements w
 
 ### Keybindings
 
-- `ctrl+i`: Executes the `Peeky: Peek Imports` command.
+- `ctrl+i`: Executes the `Peek Imports` command. The command's ID is `peeky.peekImports` if you want to configure other keybindings.
 
 ## Caveats
 

@@ -3,7 +3,7 @@ import { peekImports } from "./peekImportsCommand";
 
 export function activate(context: vscode.ExtensionContext) {
   let disposePeekImports = vscode.commands.registerCommand(
-    "peeky.peekImports",
+    "peekimports.peekImports",
     peekImports
   );
 
