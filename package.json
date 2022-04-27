@@ -1,5 +1,5 @@
 {
-  "name": "peek-imports",
+  "name": "peeky",
   "displayName": "Peek Imports",
   "description": "Peek and modify import statements without leaving the line and cursor position you're working on.",
   "publisher": "eaardal",

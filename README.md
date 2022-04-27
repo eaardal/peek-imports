@@ -6,17 +6,27 @@ A Visual Studio Code extension that lets you peek and modify import statements w
 
 ## How to use
 
-1. Anywhere in a code file, use the command `Peeky: Peek Imports` (`ctrl+i`).
+1. Anywhere in a code file, use the command `Peek Imports` (`ctrl+i`).
 2. A Peek Window will open at your current position, but it will contain the import statements at the top of the file. The cursor should be set at the first line after the last import statement.
 3. Insert a new import statement or modify an existing one, then press Escape to close the Peek Window and continue writing code where you left of.
 
 ### Keybindings
 
-- `ctrl+i`: Executes the `Peek Imports` command. The command's ID is `peeky.peekImports` if you want to configure other keybindings.
+- `ctrl+i`: Executes the `Peek Imports` command. The command's ID is `peekimports.peekImports` if you want to configure other keybindings.
+
+Example:
+
+```json
+// keybindings.json
+{
+  "key": "ctrl+i",
+  "command": "peekimports.peekImports"
+}
+```
 
 ## Caveats
 
-- Only works in javascript and typescript files.
+- Only works in javascript and typescript files (for now).
 - Only works for `import` statements, not `require` (it looks for lines that starts with the word "import" with no leading whitespace).
 
 ## Options
