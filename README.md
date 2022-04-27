@@ -16,7 +16,7 @@ A Visual Studio Code extension that lets you peek and modify import statements w
 
 Example:
 
-```json
+```
 // keybindings.json
 {
   "key": "ctrl+i",
